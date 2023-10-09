@@ -3,7 +3,7 @@ const Appointment = () => {
     return (
         <div>
            <div className="my-5 p-4">
-           <h1 className="text-secondary">Appointment Form</h1>
+           <h1 className="text-secondary text-center mb-5">Appointment Form</h1>
          <div className=" px-5 mx-auto ">
             <div className="d-flex justify-content-center align-items-center">
                <form className="w-100 border p-4">

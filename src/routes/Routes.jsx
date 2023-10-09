@@ -5,6 +5,9 @@ import Appointment from "../components/Appointment/Appointment";
 import Feedback from "../components/Feedback/Feedback";
 import Services from "../components/services/services";
 import Home from "../components/Home/Home";
+import Register from "../components/Register/Register";
+import Login from "../components/Login/Login";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -15,21 +18,34 @@ const router = createBrowserRouter([
             {
             path: '/',
             element: <Home></Home>
+                     
 
             },
             
             {
                 path: '/appointment',
-                element: <Appointment></Appointment>
+                element: <PrivateRoute><Appointment></Appointment></PrivateRoute>
             },
             {
-                path:'/services',
-                element: <Services></Services>,
+                path:'/service/:id',
+                element:<PrivateRoute><Services></Services></PrivateRoute>,
+                loader: ()=>fetch('/service.json')
             },
             {
                 path:'/feedback',
-                element: <Feedback></Feedback>
-            }
+                element:<PrivateRoute><Feedback></Feedback></PrivateRoute>
+            },
+            {
+                path:'/register',
+                element:<Register></Register>
+            },
+            {
+                path:'/login',
+                element:<Login></Login>
+            },
+            
+           
+           
             
         ]
     }

@@ -3,16 +3,15 @@ import ServiceCard from "../../ServiceCard/ServiceCard";
 import DoctorCard from "../../DoctorCard/DoctorCard";
 import GalleryCard from "../../GalleryCard/GalleryCard";
 
-const SectionContainer = ( { sectionTitle, data, cardType } ) => {
-    
-    
-        if (cardType === '1') {
+const SectionContainer = ( { sectionTitle, data, cardType } ) => { 
+      //   console.log(sectionTitle, data, cardType);
+        if (cardType === 1) {
             return (
                <div>
                   <div className="container">
                      <h1
                         style={{ backgroundColor: '#fc6c85' }}
-                        className="title fw-bold text-capitalize mt-5 mb-4 text-center rounded-pill text-white py-2 opacity-75"
+                        className="title fw-bold mt-5 mb-4 text-center rounded-pill text-white py-2 opacity-75"
                      >
                         {sectionTitle}
                      </h1>
@@ -23,18 +22,20 @@ const SectionContainer = ( { sectionTitle, data, cardType } ) => {
                         data?.map((data, i) => (
                             <ServiceCard key={i} info={data} />))
                         }
+
+                        
                      </div>
                   </div>
                </div>
             )
          }
-         if (cardType === '2') {
+         if (cardType === 2) {
             return (
                <div>
                   <div className="container">
                      <h1
                         style={{ backgroundColor: '#fc6c85' }}
-                        className="title fw-bold text-capitalize mt-5 mb-4 text-center rounded-pill text-white py-2 opacity-75"
+                        className="title fw-bold mt-5 mb-4 text-center rounded-pill text-white py-2 opacity-75"
                      >
                         {sectionTitle}
                      </h1>
@@ -52,13 +53,13 @@ const SectionContainer = ( { sectionTitle, data, cardType } ) => {
          }
          
          
-          if (cardType === '3') {
+          if (cardType === 3) {
             return (
                <div>
                   <div className="container">
                      <h1
                         style={{ backgroundColor: '#fc6c85' }}
-                        className="title fw-bold text-capitalize mt-5 mb-4 text-center rounded-pill text-white py-2 opacity-75"
+                        className="title fw-bold mt-5 mb-4 text-center rounded-pill text-white py-2 opacity-75"
                      >
                         {sectionTitle}
                      </h1>
